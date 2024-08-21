@@ -11,6 +11,7 @@
     ./linux-zen.nix
     ./fwupd.nix
     ./fonts.nix
+    ./firefox.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
