@@ -9,5 +9,5 @@
     cmake
     gnumake
     killall
-  ]
+  ];
 }
