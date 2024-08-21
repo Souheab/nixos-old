@@ -17,7 +17,6 @@ in {
       ../modules/nixos/gnome.nix
     ];
 
-  boot.initrd.luks.devices."luks-da221ce1-85e7-48b7-9899-190da00791b4".device = "/dev/disk/by-uuid/da221ce1-85e7-48b7-9899-190da00791b4";
   networking.hostName = "nixo";
 
   # Set your time zone.
