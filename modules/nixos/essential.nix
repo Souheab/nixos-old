@@ -24,5 +24,6 @@
     fastfetch
     neofetch
     pavucontrol
+    tealdeer
   ];
 }
