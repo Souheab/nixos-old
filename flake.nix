@@ -19,14 +19,14 @@
     in
     {
       nixosConfigurations = {
-        myNixos = nixpkgs.lib.nixosSystem {
+        nixo = nixpkgs.lib.nixosSystem {
           modules = [
-            ./nixos/configuration.nix
+            ./nixo/configuration.nix
             home-manager.nixosModules.home-manager
             {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.suller = import ./nixos/home.nix;
+                home-manager.users.suller = import ./nixo/home.nix;
             }
           ];
         };
