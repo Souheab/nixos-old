@@ -25,5 +25,6 @@
     neofetch
     pavucontrol
     tealdeer
+    lazygit
   ];
 }
