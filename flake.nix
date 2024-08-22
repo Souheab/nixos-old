@@ -13,13 +13,14 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
       mypkgs = import ./packages { inherit pkgs; inherit (pkgs) lib; };
+      myshells = import ./shells { inherit pkgs; };
     in
       {
         packages.${system} = mypkgs;
 
         nixosConfigurations = {
           nixo = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit mypkgs; };
+            specialArgs = { inherit mypkgs; inherit myshells; };
             modules = [
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager

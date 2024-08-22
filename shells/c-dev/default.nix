@@ -2,18 +2,19 @@
 { pkgs }:
 
 pkgs.mkShell {
-  buildInputs = with pkgs; [
+  packages = with pkgs; [
     gcc
     gdb
     gnumake
     cmake
     gtk3
+    gtk4
     glib
-    xorg
-    libX11
-    libXinerma
-    libXft
+    xorg.libX11
+    xorg.libXinerama
+    xorg.libXft
+    xorg.xorgserver
     libpulseaudio
     networkmanager
-  ]
+  ];
 }

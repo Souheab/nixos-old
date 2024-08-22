@@ -1,5 +1,5 @@
 # system packages and options that I would like to be present on any desktop linux system that I use
-{config, pkgs, ...}:
+{config, pkgs, myshells, ...}:
 {
   imports = [
     ./base.nix
@@ -13,6 +13,7 @@
     ./fonts.nix
     ./firefox.nix
     ./nix-tools.nix
+    ./dev-shells.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -27,5 +28,6 @@
     pavucontrol
     tealdeer
     lazygit
+    yt-dlp
   ];
 }
