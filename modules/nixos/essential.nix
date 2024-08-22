@@ -12,6 +12,7 @@
     ./fwupd.nix
     ./fonts.nix
     ./firefox.nix
+    ./nix-tools.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
