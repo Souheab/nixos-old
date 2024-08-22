@@ -10,27 +10,19 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @inputs:
-    let
-      pkg = import nixpkgs {
-        config = {
-          allowUnfree = true;
-        };
-      };
-    in
-    {
-      nixosConfigurations = {
-        nixo = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./nixo/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.suller = import ./nixo/home.nix;
-            }
-          ];
-        };
+  {
+    nixosConfigurations = {
+      nixo = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./nixo/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.suller = import ./nixo/home.nix;
+          }
+        ];
       };
     };
-
+  };
 }
