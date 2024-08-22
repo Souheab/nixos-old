@@ -1,5 +1,5 @@
 {
-  description = "My nix config";
+  description = "My nixos config flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
@@ -10,19 +10,32 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @inputs:
-  {
-    nixosConfigurations = {
-      nixo = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./nixo/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.suller = import ./nixo/home.nix;
-          }
-        ];
+    let
+      system = "x86_64-linux";
+
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
       };
-    };
-  };
+
+      mypkgs = import ./packages { inherit pkgs; inherit (pkgs) lib; };
+    in
+      {
+        packages.${system} = mypkgs;
+
+        nixosConfigurations = {
+          nixo = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit mypkgs; };
+            modules = [
+              ./nixo/configuration.nix
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.suller = import ./nixo/home.nix;
+              }
+            ];
+          };
+        };
+      };
 }
