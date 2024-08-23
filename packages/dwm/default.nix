@@ -2,6 +2,7 @@
 , fetchFromGitHub
 , feh
 , sgbar
+, wezterm
 }:
 
 dwm.overrideAttrs {
@@ -15,7 +16,8 @@ dwm.overrideAttrs {
   postPatch = ''
   substituteInPlace config.h \
     --replace 'feh' '${feh}' \
-    --replace 'sgbar' '${sgbar}'
+    --replace 'sgbar' '${sgbar}' \
+    --replace 'wezterm' '${wezterm}'
   '';
   passthru.updateScript = null;
 }
