@@ -14,6 +14,7 @@
     ./firefox.nix
     ./nix-tools.nix
     ./dev-shells.nix
+    ./terminals.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
