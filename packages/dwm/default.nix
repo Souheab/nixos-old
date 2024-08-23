@@ -15,9 +15,9 @@ dwm.overrideAttrs {
 
   postPatch = ''
   substituteInPlace config.h \
-    --replace 'feh' '${feh}' \
-    --replace 'sgbar' '${sgbar}' \
-    --replace 'wezterm' '${wezterm}'
+    --replace 'feh' '${feh}/bin/feh' \
+    --replace 'sgbar' '${sgbar}/bin/sgbar' \
+    --replace 'wezterm' '${wezterm}/bin/wezterm'
   '';
   passthru.updateScript = null;
 }
