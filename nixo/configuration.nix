@@ -15,6 +15,8 @@ in {
       ../modules/nixos/gaming.nix
       # Gnome
       ../modules/nixos/gnome.nix
+      # DWM
+      ../modules/nixos/dwm.nix
     ];
 
   networking.hostName = "nixo";

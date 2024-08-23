@@ -12,6 +12,10 @@ dwm.overrideAttrs {
     sha256 = "sha256-ise7bQkK29MtEatltizu66W1yFhxllxmjxUrERK+r/I=";
   };
 
-  postPatch = null;
+  postPatch = ''
+  substituteInPlace config.h \
+    --replace 'feh' '${feh}' \
+    --replace 'sgbar' '${sgbar}'
+  '';
   passthru.updateScript = null;
 }
