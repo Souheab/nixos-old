@@ -4,6 +4,7 @@
 pkgs.mkShell {
   packages = with pkgs; [
     pkg-config
+    bear
     gcc
     gdb
     gnumake
