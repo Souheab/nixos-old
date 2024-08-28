@@ -20,9 +20,8 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
-    emacs
     btop
-    neovim
+    vim
     ripgrep
     fastfetch
     neofetch
