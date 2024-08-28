@@ -17,6 +17,8 @@ in {
       ../modules/nixos/gnome.nix
       # DWM
       ../modules/nixos/dwm.nix
+      # Fish shell
+      ../modules/nixos/fish.nix
     ];
 
   networking.hostName = "nixo";
