@@ -1,8 +1,9 @@
 { pkgs, lib }:
 let
   sgbar = pkgs.callPackage ./sgbar { };
+  callPackage = pkgs.callPackage;
 in
 {
   inherit sgbar;
-  dwm = pkgs.callPackage ./dwm { inherit sgbar; };
+  dwm = callPackage ./dwm { inherit sgbar; };
 }
