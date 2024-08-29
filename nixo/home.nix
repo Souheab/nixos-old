@@ -5,6 +5,7 @@
   imports = [
     ../modules/home/emacs.nix
     ../modules/home/fish.nix
+    ../modules/home/mpv.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

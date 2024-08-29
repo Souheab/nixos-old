@@ -11,5 +11,6 @@
     lg  = "lazygit";
     nrb = "sudo nixos-rebuild switch --flake ~/Documents/nixos/#nixo";
     nlg = "lazygit -p ~/Documents/nixos";
+    ncd = "cd ~/Documents/nixos";
   };
 }
