@@ -33,6 +33,8 @@
     syncthing
     # FOSS bittorrent client
     qbittorrent
+    # Video Downloading programming
+    yt-dlp
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -28,6 +28,5 @@
     pavucontrol
     tealdeer
     lazygit
-    yt-dlp
   ];
 }
