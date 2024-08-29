@@ -15,6 +15,7 @@
     ./nix-tools.nix
     ./dev-shells.nix
     ./terminals.nix
+    ./fprintd.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -28,5 +29,6 @@
     pavucontrol
     tealdeer
     lazygit
+    usbutils
   ];
 }
