@@ -19,6 +19,8 @@ in {
       ../modules/nixos/dwm.nix
       # Fish shell
       ../modules/nixos/fish.nix
+      # Fingerprint sensor
+      ../modules/nixos/fprintd.nix
     ];
 
   networking.hostName = "nixo";
