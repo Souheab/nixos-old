@@ -15,13 +15,16 @@
       pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
       mypkgs = import ./packages { inherit pkgs; inherit (pkgs) lib; };
       myshells = import ./shells { inherit pkgs; };
+      nur-modules = import nur rec {
+        nurpkgs = nixpkgs.legacyPackages.${system};
+        pkgs = nixpkgs.legacyPackages.${system};
+      };
     in
       {
         packages.${system} = mypkgs;
-
         nixosConfigurations = {
           nixo = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit mypkgs; inherit myshells; };
+            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules;};
             modules = [
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager

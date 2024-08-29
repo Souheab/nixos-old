@@ -16,6 +16,7 @@
     ./dev-shells.nix
     ./terminals.nix
     ./fprintd.nix
+    ./nordvpn.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
