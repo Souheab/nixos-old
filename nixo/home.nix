@@ -35,6 +35,8 @@
     qbittorrent
     # Video Downloading programming
     yt-dlp
+    # Minecraft launcher
+    prismlauncher
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
