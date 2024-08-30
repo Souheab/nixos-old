@@ -6,5 +6,5 @@ in
 {
   inherit sgbar;
   dwm = callPackage ./dwm { inherit sgbar; };
-  nordvpn-bin = callPackage ./nordvpn-bin { };
+  # nordvpn-bin = callPackage ./nordvpn-bin { };
 }
