@@ -13,8 +13,8 @@ in {
       ../modules/nixos/essential.nix
       # Gaming related options
       ../modules/nixos/gaming.nix
-      # Gnome
-      ../modules/nixos/gnome.nix
+      # KDE
+      ../modules/nixos/kde.nix
       # DWM
       ../modules/nixos/dwm.nix
       # Fish shell
