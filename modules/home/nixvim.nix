@@ -6,6 +6,7 @@
     enable = true;
     opts = {
       backup = false;
+      background = "";
       clipboard = "unnamedplus";
       cmdheight = 1;
       conceallevel = 0;
@@ -27,7 +28,15 @@
       wrap = false;
       scrolloff = 8;
       sidescrolloff = 8;
-    }
+    };
+    colorschemes = {
+      tokyonight = {
+        enable = true;
+        settings = {
+          style = "night";
+        };
+      };
+    };
     plugins = {
       lualine = {
         enable = true;
@@ -46,7 +55,7 @@
       };
       which-key = {
         enable = true;
-      }
+      };
     };
   };
 }

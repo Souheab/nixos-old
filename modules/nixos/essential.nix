@@ -14,7 +14,6 @@
     ./firefox.nix
     ./nix-tools.nix
     ./dev-shells.nix
-    ./terminals.nix
     ./fprintd.nix
     ./nordvpn.nix
   ];
