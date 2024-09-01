@@ -1,6 +1,9 @@
 { config, pkgs, nixvim, ... }:
 {
-  imports = [ nixvim.homeManagerModules.nixvim ];
+  imports = [
+    nixvim.homeManagerModules.nixvim
+    ./lsp.nix
+  ];
 
   programs.nixvim = {
     enable = true;
@@ -54,6 +57,12 @@
         enable = true;
       };
       which-key = {
+        enable = true;
+      };
+      lsp = {
+        enable = true;
+      };
+      cmp = {
         enable = true;
       };
     };

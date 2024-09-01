@@ -1,8 +1,8 @@
 { config, pkgs, ...}:
 {
-  home.packages = with pkgs; [
-    clang-tools
+  imports = [
+    ./lsp.nix
   ];
-
+  
   programs.emacs.enable = true;
 }
