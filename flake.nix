@@ -15,13 +15,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nixvim, ... } @inputs:
+  outputs = { nixpkgs, home-manager, nur, nixvim, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
       mypkgs = import ./packages { inherit pkgs; inherit (pkgs) lib; };
       myshells = import ./shells { inherit pkgs; };
-      nur-modules = import nur rec {
+      nur-modules = import nur {
         nurpkgs = nixpkgs.legacyPackages.${system};
         pkgs = nixpkgs.legacyPackages.${system};
       };
@@ -35,7 +35,7 @@
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager
               {
-                home-manager.extraSpecialArgs = { inherit (inputs) nixvim; };
+                home-manager.extraSpecialArgs = { inherit nixvim; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.suller = import ./nixo/home.nix;
