@@ -4,6 +4,7 @@ let
     silent = true;
     noremap = true;
   };
+  telescope-prefix = "<leader>s";
 in
 {
   imports = [
@@ -14,41 +15,6 @@ in
     enable = true;
     globals = {
       mapleader = " ";
-    };
-    opts = {
-      backup = false;
-      background = "";
-      clipboard = "unnamedplus";
-      cmdheight = 1;
-      conceallevel = 0;
-      fileencoding = "utf-8";
-      hlsearch = true;
-      ignorecase = true;
-      showtabline = 2;
-      smartcase = true;
-      smartindent = true;
-      splitbelow = true;
-      splitright = true;
-      termguicolors = true;
-      timeoutlen = 400;
-      undofile = true;
-      updatetime = 300;
-      expandtab = true;
-      number = true;
-      relativenumber = true;
-      wrap = false;
-      scrolloff = 8;
-      sidescrolloff = 8;
-      shiftwidth = 2;
-      tabstop = 2;
-    };
-    colorschemes = {
-      tokyonight = {
-        enable = true;
-        settings = {
-          style = "night";
-        };
-      };
     };
     plugins = {
       lualine = {
@@ -107,6 +73,9 @@ in
           '';
         };
       };
+      autoclose = {
+        enable = true;
+      };
     };
     keymaps = [
       {
@@ -131,6 +100,18 @@ in
         key = "<leader>e";
         action = "<cmd>NvimTreeToggle<cr>";
         options = keyopts;
+      }
+      {
+        key = "<leader>,";
+        action = "<cmd>Telescope buffers<cr>";
+      }
+      {
+        key = "<leader><";
+        action = "<cmd>Telescope git_files<cr>";
+      }
+      {
+        key = "${telescope-prefix}s";
+        action = "<cmd>Telescope live_grep<cr>";
       }
     ];
   };

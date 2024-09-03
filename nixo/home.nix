@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../modules/home/emacs.nix
     ../modules/home/fish.nix
     ../modules/home/mpv.nix
-    ../modules/home/nixvim.nix
+    ../modules/home/nixvim
     ../modules/home/wezterm.nix
   ];
 
