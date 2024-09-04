@@ -32,7 +32,7 @@
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager
               {
-                home-manager.extraSpecialArgs = { inherit nixvim; };
+                home-manager.extraSpecialArgs = { inherit system; inherit nixvim; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.suller = import ./nixo/home.nix;

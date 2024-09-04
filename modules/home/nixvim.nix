@@ -1,6 +1,6 @@
-{ nixvim, ... }:
+{ nixvim, system, ... }:
 {
   home.packages = [
-    nixvim
+    nixvim.packages.${system}.default
   ];
 }
