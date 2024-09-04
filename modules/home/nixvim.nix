@@ -1,0 +1,6 @@
+{ nixvim, ... }:
+{
+  home.packages = [
+    nixvim
+  ];
+}

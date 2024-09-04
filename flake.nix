@@ -9,10 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/NUR";
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:Souheab/nixvim";
   };
 
   outputs = { nixpkgs, home-manager, nur, nixvim, ... } @inputs:
