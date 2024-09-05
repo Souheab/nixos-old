@@ -12,10 +12,11 @@
     nixvim.url = "github:Souheab/nixvim";
   };
 
-  outputs = { nixpkgs, home-manager, nur, nixvim, ... } @inputs:
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, nur, nixvim, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
+      pkgs-unstable = import nixpkgs-unstable {inherit system; config.allowUnfree = true;};
       mypkgs = import ./packages { inherit pkgs; inherit (pkgs) lib; };
       myshells = import ./shells { inherit pkgs; };
       nur-modules = import nur {
@@ -32,7 +33,7 @@
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager
               {
-                home-manager.extraSpecialArgs = { inherit system; inherit nixvim; };
+                home-manager.extraSpecialArgs = { inherit pkgs-unstable; inherit system; inherit nixvim; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.suller = import ./nixo/home.nix;
