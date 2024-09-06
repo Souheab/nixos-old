@@ -1,4 +1,4 @@
-{pkgs-unstable, ...}:
+{pkgs-unstable, helpers, osConfig, ...}:
 {
   programs.yazi = {
     enable = true; 
@@ -36,7 +36,16 @@
     };
     keymap = {
       manager.prepend_keymap = [
-        { on =  ["y"]; run = [ "shell --confirm 'echo \"$@\" | xclip -i -selection clipboard -t text/uri-list' --confirm" "yank"];}
+        (helpers.functions.mkIfElse osConfig.myoptions.usingWayland
+          {
+            on =  ["y"]; 
+            run = ["shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list' --confirm" "yank"];
+          }
+          { 
+            on =  ["y"]; 
+            run = [ "shell --confirm 'echo \"$@\" | xclip -i -selection clipboard -t text/uri-list' --confirm" "yank"];
+          }
+        )
       ];
     };
   };

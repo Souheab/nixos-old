@@ -29,13 +29,13 @@
         packages.${system} = mypkgs;
         nixosConfigurations = {
           nixo = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; inherit helpers;};
+            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; };
             modules = [
               ./modules/options.nix
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager
               {
-                home-manager.extraSpecialArgs = { inherit pkgs-unstable; inherit system; inherit nixvim; };
+                home-manager.extraSpecialArgs = { inherit pkgs-unstable; inherit system; inherit nixvim; inherit helpers; };
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.suller = import ./nixo/home.nix;
