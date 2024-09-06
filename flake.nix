@@ -31,7 +31,6 @@
           nixo = nixpkgs.lib.nixosSystem {
             specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; };
             modules = [
-              ./modules/options.nix
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager
               {

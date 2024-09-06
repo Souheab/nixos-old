@@ -2,6 +2,7 @@
 {config, pkgs, myshells, ...}:
 {
   imports = [
+    ./options.nix
     ./base.nix
     ./audio.nix
     ./networkmanager.nix
