@@ -23,13 +23,15 @@
         nurpkgs = nixpkgs.legacyPackages.${system};
         pkgs = nixpkgs.legacyPackages.${system};
       };
+      helpers = import ./modules/helpers.nix { inherit (pkgs) lib; };
     in
       {
         packages.${system} = mypkgs;
         nixosConfigurations = {
           nixo = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules;};
+            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; inherit helpers;};
             modules = [
+              ./modules/options.nix
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager
               {
