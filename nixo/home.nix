@@ -40,6 +40,8 @@
     prismlauncher
     # Command-line tool to customize Spotify client
     spicetify-cli
+    # Libre office program
+    libreoffice
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
