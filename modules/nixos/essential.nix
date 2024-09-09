@@ -20,6 +20,9 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  
+  # Enable flatpak
+  services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
     btop
