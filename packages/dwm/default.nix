@@ -3,21 +3,23 @@
 , feh
 , sgbar
 , wezterm
+, rofi
 }:
 
 dwm.overrideAttrs {
   src = fetchFromGitHub {
     owner = "Souheab";
     repo = "dwm";
-    rev = "747c1603dacd44037c3f72b04cf0edb8c6460525";
-    sha256 = "sha256-ise7bQkK29MtEatltizu66W1yFhxllxmjxUrERK+r/I=";
+    rev = "9bb96c5f776f751499d0936217cfa068766271da";
+    sha256 = "sha256-pmsLWehNNDXYvex//SmltoLq+cX0LV+s7vAP0SX4pQ8=";
   };
 
   postPatch = ''
   substituteInPlace config.h \
     --replace 'feh' '${feh}/bin/feh' \
     --replace 'sgbar' '${sgbar}/bin/sgbar' \
-    --replace 'wezterm' '${wezterm}/bin/wezterm'
+    --replace 'wezterm' '${wezterm}/bin/wezterm' \
+    --replace 'rofi' '${rofi}/bin/rofi'
   '';
   passthru.updateScript = null;
 }
