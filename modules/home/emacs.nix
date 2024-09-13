@@ -2,6 +2,7 @@
 {
   imports = [
     ./lsp.nix
+    ./latex.nix
   ];
   
   programs.emacs.enable = true;

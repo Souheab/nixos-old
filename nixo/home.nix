@@ -42,6 +42,8 @@
     spicetify-cli
     # Libre office program
     libreoffice
+    nicotine-plus
+    rhythmbox
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
