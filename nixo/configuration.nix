@@ -2,10 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, myshells, ... }:
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in {
+{ ... }:
+{
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -17,6 +15,8 @@ in {
       ../modules/nixos/kde.nix
       # DWM
       ../modules/nixos/dwm.nix
+      # Hyprland
+      ../modules/nixos/hyprland.nix
       # Fish shell
       ../modules/nixos/fish.nix
       # Fingerprint sensor
