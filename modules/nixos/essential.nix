@@ -34,5 +34,6 @@
     tealdeer
     lazygit
     usbutils
+    python3
   ];
 }

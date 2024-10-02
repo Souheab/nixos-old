@@ -7,6 +7,7 @@
     ../modules/home/wezterm.nix
     ../modules/home/nixvim.nix
     ../modules/home/yazi.nix
+    ../modules/home/ardour.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -44,6 +45,8 @@
     libreoffice
     nicotine-plus
     rhythmbox
+    gimp
+    distrobox
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
