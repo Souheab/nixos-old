@@ -29,7 +29,7 @@
         packages.${system} = mypkgs;
         nixosConfigurations = {
           nixo = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; };
+            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; inherit pkgs-unstable; };
             modules = [
               ./nixo/configuration.nix
               home-manager.nixosModules.home-manager
