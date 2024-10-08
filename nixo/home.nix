@@ -8,6 +8,7 @@
     ../modules/home/nixvim.nix
     ../modules/home/yazi.nix
     ../modules/home/ardour.nix
+    ../modules/home/hyprland.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
