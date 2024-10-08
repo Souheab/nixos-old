@@ -1,19 +1,25 @@
-{...}:
+{ pkgs, ...}:
 {
+  imports = [
+    ./waybar.nix
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       monitor = ",preferred,1920x1080,1";
-      env = {
-        XCURSOR_SIZE = 24;
-        QT_QPA_PLATFORMTHEME = "qt5ct"; # Change to qt6ct if necessary
-        QT_QPA_PLATFORM = "wayland";
-      };
-      programs = {
-        terminal = "wezterm";
-        fileManager = "dolphin";
-        menu = "wofi --show drun";
-      };
+      env = [
+        "XCURSOR_SIZE,24"
+        "QT_QPA_PLATFORMTHEME,qt5ct" # Change to qt6ct if necessary
+        "QT_QPA_PLATFORM,wayland"
+      ];
+      # Programs:
+      "$terminal" = "${pkgs.foot}/bin/foot";
+      "$menu" = "${pkgs.wofi}/bin/wofi --show drun";
+      "$bar" = "${pkgs.waybar}/bin/waybar";
+      exec-once = [
+        "${pkgs.networkmanagerapplet}/bin/nm-applet &"
+        "$bar &"
+      ];
       input = {
         kb_layout = "us";
         kb_variant = "";
@@ -30,10 +36,8 @@
         gaps_in = 10;
         gaps_out = 10;
         border_size = 2;
-        col = {
-          active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-          inactive_border = "rgba(595959aa)";
-        };
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
         layout = "master";
         allow_tearing = false;
       };
@@ -47,7 +51,7 @@
         drop_shadow = "yes";
         shadow_range = 4;
         shadow_render_power = 3;
-        col.shadow = "rgba(1a1a1aee)";
+        "col.shadow" = "rgba(1a1a1aee)";
       };
       animations = {
         enabled = "yes";
@@ -101,7 +105,8 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
-        "$mod, RETURN, exec, wezterm"
+        "$mod, RETURN, exec, $terminal"
+        "$mod, P, exec, $menu"
         "$mod SHIFT, Q, exit"
       ];
     };
