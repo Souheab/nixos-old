@@ -1,8 +1,7 @@
-{pkgs-unstable, helpers, osConfig, ...}:
+{ helpers, osConfig, ...}:
 {
   programs.yazi = {
     enable = true; 
-    package = pkgs-unstable.yazi;
     enableFishIntegration = true;
     settings = {
       manager = {

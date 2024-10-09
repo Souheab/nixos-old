@@ -1,11 +1,10 @@
-{ pkgs, pkgs-unstable, ...}:
+{ pkgs,  ...}:
 {
   imports = [
     ./waybar.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs-unstable.hyprland;
     settings = {
       monitor = ",preferred,1920x1080,1";
       env = [

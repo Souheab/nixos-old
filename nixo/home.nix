@@ -4,7 +4,7 @@
     ../modules/home/emacs.nix
     ../modules/home/fish.nix
     ../modules/home/mpv.nix
-    ../modules/home/wezterm.nix
+    ../modules/home/kitty.nix
     ../modules/home/nixvim.nix
     ../modules/home/yazi.nix
     ../modules/home/ardour.nix
