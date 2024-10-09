@@ -13,7 +13,7 @@
         "QT_QPA_PLATFORM,wayland"
       ];
       # Programs:
-      "$terminal" = "${pkgs.foot}/bin/foot";
+      "$terminal" = "${pkgs.kitty}/bin/kitty";
       "$menu" = "${pkgs.wofi}/bin/wofi --show drun";
       "$bar" = "${pkgs.waybar}/bin/waybar";
       "$notification" = "${pkgs.dunst}/bin/dunst";
