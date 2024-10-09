@@ -30,7 +30,7 @@
     ripgrep
     fastfetch
     neofetch
-    pavucontrol
+    pwvucontrol
     tealdeer
     lazygit
     usbutils
