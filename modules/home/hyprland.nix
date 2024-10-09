@@ -1,10 +1,11 @@
-{ pkgs, ...}:
+{ pkgs, pkgs-unstable, ...}:
 {
   imports = [
     ./waybar.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;
+    package = pkgs-unstable.hyprland;
     settings = {
       monitor = ",preferred,1920x1080,1";
       env = [
@@ -16,8 +17,10 @@
       "$terminal" = "${pkgs.foot}/bin/foot";
       "$menu" = "${pkgs.wofi}/bin/wofi --show drun";
       "$bar" = "${pkgs.waybar}/bin/waybar";
+      "$notification" = "${pkgs.dunst}/bin/dunst";
       exec-once = [
         "${pkgs.networkmanagerapplet}/bin/nm-applet &"
+        "$notification"
         "$bar &"
       ];
       input = {
@@ -108,6 +111,34 @@
         "$mod, RETURN, exec, $terminal"
         "$mod, P, exec, $menu"
         "$mod SHIFT, Q, exit"
+
+        # Scroll through existing workspaces with mainMod + scroll
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
+
+        # Move/resize windows with mainMod + LMB/RMB and dragging
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindowpixel"
+
+        # Move focus with mainMod + arrow keys
+        "$mod, H, movefocus, l"
+        "$mod, L, movefocus, r"
+        "$mod, K, movefocus, u"
+        "$mod, J, movefocus, d"
+
+
+        # Move Windows Around
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
+
+        # resize windows
+        "$mod CONTROL, H, resizeactive, -30 0"
+        "$mod CONTROL, L, resizeactive, 30 0 "
+
+        # Go to previous workspace
+        "$mod, ESCAPE, workspace, previous"
       ];
     };
   };
