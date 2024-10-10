@@ -110,6 +110,8 @@
         "$mod, RETURN, exec, $terminal"
         "$mod, P, exec, $menu"
         "$mod SHIFT, Q, exit"
+        "$mod, Q, killactive"
+        "$mod, F, fullscreen, 0"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mod, mouse_down, workspace, e+1"
@@ -138,6 +140,32 @@
 
         # Go to previous workspace
         "$mod, ESCAPE, workspace, previous"
+      ];
+    };
+  };
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      general = {
+        disable_loading_bar = true;
+        grace = 300;
+        hide_cursor = true;
+        no_fade_in = false;
+      };
+
+      input-field = [
+        {
+          size = "200, 50";
+          position = "0, -80";
+          monitor = "";
+          dots_center = true;
+          fade_on_empty = false;
+          font_color = "rgb(202, 211, 245)";
+          inner_color = "rgb(91, 96, 120)";
+          outer_color = "rgb(24, 25, 38)";
+          outline_thickness = 5;
+          shadow_passes = 2;
+        }
       ];
     };
   };

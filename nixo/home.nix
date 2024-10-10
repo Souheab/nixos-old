@@ -49,6 +49,8 @@
     gimp
     distrobox
     kdenlive
+    # Screenshot annotation tool
+    satty
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -21,6 +21,8 @@
       ../modules/nixos/fish.nix
       # Fingerprint sensor
       ../modules/nixos/fprintd.nix
+      # Enable wireshark
+      ../modules/nixos/wireshark.nix
     ];
 
   networking.hostName = "nixo";
