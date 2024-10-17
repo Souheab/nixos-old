@@ -3,6 +3,7 @@
   imports = [
     ./lsp.nix
     ./latex.nix
+    ./programming/go.nix
   ];
   
   programs.emacs.enable = true;
