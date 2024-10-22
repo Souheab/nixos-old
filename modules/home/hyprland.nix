@@ -9,7 +9,6 @@
       monitor = ",preferred,1920x1080,1";
       env = [
         "XCURSOR_SIZE,24"
-        "QT_QPA_PLATFORMTHEME,qt5ct" # Change to qt6ct if necessary
         "QT_QPA_PLATFORM,wayland"
       ];
       # Programs:

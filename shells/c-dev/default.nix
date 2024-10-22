@@ -1,10 +1,10 @@
 # A maximalist shell for C programming
-{ pkgs }:
+{ pkgs, pkgs-stable }:
 
 pkgs.mkShell {
   packages = with pkgs; [
     pkg-config
-    bear
+    pkgs-stable.bear
     gcc
     gdb
     gnumake

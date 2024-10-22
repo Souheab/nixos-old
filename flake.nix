@@ -18,7 +18,7 @@
       pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
       pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true;};
       mypkgs = import ./packages { inherit pkgs; inherit (pkgs) lib; };
-      myshells = import ./shells { inherit pkgs; };
+      myshells = import ./shells { inherit pkgs; inherit pkgs-stable; };
       nur-modules = import nur {
         nurpkgs = nixpkgs.legacyPackages.${system};
         pkgs = nixpkgs.legacyPackages.${system};

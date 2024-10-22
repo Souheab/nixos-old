@@ -6,6 +6,7 @@
     vim
     wget
     gcc
+    gdb
     cmake
     gnumake
     killall

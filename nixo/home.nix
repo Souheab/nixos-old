@@ -46,11 +46,13 @@
     libreoffice
     nicotine-plus
     rhythmbox
+    strawberry
     gimp
     distrobox
     kdenlive
     # Screenshot annotation tool
     satty
+    vscode-fhs
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
