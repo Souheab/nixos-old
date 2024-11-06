@@ -11,6 +11,6 @@
   home.packages = with pkgs; [
     # For copilot mode
     nodejs
-    python312Packages.python-lsp-server
+    pyright
   ];
 }

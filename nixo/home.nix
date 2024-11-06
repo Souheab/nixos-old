@@ -9,6 +9,7 @@
     ../modules/home/yazi.nix
     ../modules/home/ardour.nix
     ../modules/home/hyprland.nix
+    ../modules/home/obs.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -53,6 +54,8 @@
     # Screenshot annotation tool
     satty
     vscode-fhs
+    tor-browser
+    brave
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

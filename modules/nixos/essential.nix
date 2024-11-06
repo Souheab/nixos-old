@@ -24,6 +24,10 @@
   # Enable flatpak
   services.flatpak.enable = true;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   environment.systemPackages = with pkgs; [
     btop
     vim
@@ -35,5 +39,6 @@
     lazygit
     usbutils
     python3
+    android-tools
   ];
 }
