@@ -10,6 +10,7 @@
     ../modules/home/ardour.nix
     ../modules/home/hyprland.nix
     ../modules/home/obs.nix
+    ../modules/home/vscode.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -53,7 +54,6 @@
     kdenlive
     # Screenshot annotation tool
     satty
-    vscode-fhs
     tor-browser
     brave
   ];
