@@ -4,6 +4,7 @@
     ./lsp.nix
     ./latex.nix
     ./programming/go.nix
+    ./programming/typescript.nix
   ];
   
   programs.emacs.enable = true;
