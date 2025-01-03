@@ -39,7 +39,7 @@
                 home-manager.useUserPackages = true;
                 home-manager.users.suller = import ./nixo/home.nix;
               }
-              nur.nixosModules.nur
+              nur.modules.nixos.default
             ];
           };
         };
