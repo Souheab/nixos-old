@@ -50,12 +50,13 @@
     rhythmbox
     strawberry
     gimp
-    distrobox
     kdenlive
     # Screenshot annotation tool
     satty
     tor-browser
     brave
+    xournalpp
+    tenacity
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

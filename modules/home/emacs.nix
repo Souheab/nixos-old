@@ -13,5 +13,7 @@
     # For copilot mode
     nodejs
     pyright
+    openjdk
+    languagetool
   ];
 }

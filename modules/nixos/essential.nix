@@ -40,5 +40,10 @@
     usbutils
     python3
     android-tools
+    distrobox
+    verilog
+    ffmpeg
+    file
+    wirelesstools
   ];
 }

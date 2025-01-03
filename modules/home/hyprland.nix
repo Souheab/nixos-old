@@ -16,6 +16,7 @@
       "$menu" = "${pkgs.wofi}/bin/wofi --show drun";
       "$bar" = "${pkgs.waybar}/bin/waybar";
       "$notification" = "${pkgs.dunst}/bin/dunst";
+      "$screenshot" = "${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy";
       exec-once = [
         "${pkgs.networkmanagerapplet}/bin/nm-applet &"
         "$notification"
@@ -83,6 +84,13 @@
         allow_workspace_cycles = "yes";
       };
       "$mod" = "SUPER";
+      windowrulev2 = [
+        "noanim, class:^(flameshot)$"
+        "float, class:^(flameshot)$"
+        "move 0 0, class:^(flameshot)$"
+        "pin, class:^(flameshot)$"
+        "monitor 0, class:^(flameshot)$"
+      ];
       bind = [
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -139,33 +147,13 @@
 
         # Go to previous workspace
         "$mod, ESCAPE, workspace, previous"
+
+        "$mod SHIFT, S, exec, $screenshot"
+        "$mod ALT, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
       ];
     };
   };
   programs.hyprlock = {
     enable = true;
-    settings = {
-      general = {
-        disable_loading_bar = true;
-        grace = 300;
-        hide_cursor = true;
-        no_fade_in = false;
-      };
-
-      input-field = [
-        {
-          size = "200, 50";
-          position = "0, -80";
-          monitor = "";
-          dots_center = true;
-          fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
-          outline_thickness = 5;
-          shadow_passes = 2;
-        }
-      ];
-    };
   };
 }

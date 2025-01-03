@@ -36,12 +36,15 @@
   users.users.suller = {
     isNormalUser = true;
     description = "suller";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     initialPassword = "password";
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
