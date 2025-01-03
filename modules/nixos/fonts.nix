@@ -3,8 +3,7 @@
   fonts.packages = with pkgs; [
      jetbrains-mono
      lexend
-     nerdfonts
      noto-fonts
      emacs-all-the-icons-fonts
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }
