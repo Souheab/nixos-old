@@ -7,7 +7,7 @@
     ../modules/home/kitty.nix
     ../modules/home/nixvim.nix
     ../modules/home/yazi.nix
-    ../modules/home/ardour.nix
+    # ../modules/home/ardour.nix Temporarily disabled due to build issues
     ../modules/home/hyprland.nix
     ../modules/home/obs.nix
     ../modules/home/vscode.nix
