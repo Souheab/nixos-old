@@ -2,7 +2,7 @@
 , fetchFromGitHub
 , feh
 , sgbar
-, wezterm
+, kitty
 , rofi
 }:
 
@@ -18,7 +18,7 @@ dwm.overrideAttrs {
   substituteInPlace config.h \
     --replace 'feh' '${feh}/bin/feh' \
     --replace 'sgbar' '${sgbar}/bin/sgbar' \
-    --replace 'wezterm' '${wezterm}/bin/wezterm' \
+    --replace 'wezterm' '${kitty}/bin/kitty' \
     --replace 'rofi' '${rofi}/bin/rofi'
   '';
   passthru.updateScript = null;

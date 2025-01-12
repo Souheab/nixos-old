@@ -15,7 +15,7 @@
       naturalScrolling = true;
     };
     mouse = {
-      naturalScrolling = true;
+      naturalScrolling = false; # Reminder: Mouse natural scrolling being false is what you're used to
     };
   };
 }
