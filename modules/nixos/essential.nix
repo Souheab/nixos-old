@@ -45,5 +45,6 @@
     ffmpeg
     file
     wirelesstools
+    glib
   ];
 }
