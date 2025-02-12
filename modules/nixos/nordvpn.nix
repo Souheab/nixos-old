@@ -1,6 +1,6 @@
 { pkgs,  ... }:
 let
-  nordvpn = pkgs.nur.repos.LuisChDev.nordvpn;
+  nordvpn = pkgs.nur.repos.wingej0.nordvpn;
 in
 {
   environment.systemPackages = [ nordvpn ];
