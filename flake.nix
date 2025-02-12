@@ -42,6 +42,12 @@
               nur.modules.nixos.default
             ];
           };
+          legion = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; inherit pkgs-stable; };
+            modules = [
+              ./legion/configuration.nix
+            ];
+          };
         };
       };
 }
