@@ -23,6 +23,8 @@
       ../modules/nixos/fprintd.nix
       # Enable wireshark
       ../modules/nixos/wireshark.nix
+      # Windows compatibility
+      ../modules/nixos/windows-compatibility.nix
     ];
 
   networking.hostName = "nixo";
