@@ -46,6 +46,14 @@
             specialArgs = { inherit mypkgs; inherit myshells; inherit nur-modules; inherit pkgs-stable; };
             modules = [
               ./legion/configuration.nix
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.extraSpecialArgs = { inherit pkgs-stable; inherit system; inherit nixvim; inherit helpers; };
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.suller = import ./legion/home.nix;
+              }
+              nur.modules.nixos.default
             ];
           };
         };

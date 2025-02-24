@@ -57,6 +57,7 @@
     brave
     xournalpp
     tenacity
+    davinci-resolve
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
