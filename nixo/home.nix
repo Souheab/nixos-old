@@ -11,6 +11,7 @@
     ../modules/home/hyprland.nix
     ../modules/home/obs.nix
     ../modules/home/vscode.nix
+    ../modules/home/dwm.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
