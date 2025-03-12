@@ -3,8 +3,7 @@
   imports = [
     ./lsp.nix
     ./latex.nix
-    ./programming/go.nix
-    ./programming/typescript.nix
+    ./programming
   ];
   
   programs.emacs.enable = true;
