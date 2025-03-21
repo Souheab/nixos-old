@@ -58,6 +58,10 @@
     brave
     xournalpp
     tenacity
+    freetube
+    google-chrome
+    android-studio
+    insomnia
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
