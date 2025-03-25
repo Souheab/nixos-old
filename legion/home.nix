@@ -63,6 +63,8 @@
     google-chrome
     android-studio
     insomnia
+    apktool
+    httptoolkit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
