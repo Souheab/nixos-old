@@ -51,7 +51,7 @@
     rhythmbox
     strawberry
     gimp
-    kdenlive
+    kdePackages.kdenlive
     # Screenshot annotation tool
     satty
     tor-browser
@@ -65,6 +65,9 @@
     insomnia
     apktool
     httptoolkit
+    godot
+    anki
+    postman
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
