@@ -16,7 +16,7 @@
       # DWM
       ../modules/nixos/dwm.nix
       # Awesome
-      ../modules/nixos/awesomewm.nix
+       ../modules/nixos/awesomewm.nix
       # Fish shell
       ../modules/nixos/fish.nix
     ];
