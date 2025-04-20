@@ -7,4 +7,5 @@ in
   inherit sgbar;
   dwm = callPackage ./dwm { };
   # nordvpn-bin = callPackage ./nordvpn-bin { };
+  awesome-git = callPackage ./awesome-git { };
 }
