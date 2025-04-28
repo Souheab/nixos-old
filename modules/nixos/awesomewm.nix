@@ -26,5 +26,6 @@
   environment.systemPackages = with pkgs; [
     pamixer
     acpilight
+    rofi
   ];
 }
