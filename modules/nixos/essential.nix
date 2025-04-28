@@ -47,5 +47,6 @@
     wirelesstools
     glib
     rustup
+    cloc
   ];
 }
