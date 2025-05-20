@@ -3,6 +3,7 @@
 {
   services.xserver = {
     enable = true;
+    dpi = 82;
     windowManager.awesome = {
       enable = true;
       package = pkgs.awesome.overrideAttrs (oldAttrs: {
