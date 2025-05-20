@@ -12,6 +12,7 @@
     ../modules/home/obs.nix
     ../modules/home/vscode.nix
     ../modules/home/programming
+    ../modules/home/rofi.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
