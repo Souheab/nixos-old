@@ -59,7 +59,6 @@
     brave
     xournalpp
     tenacity
-    davinci-resolve
     dbeaver-bin
     google-chrome
     android-studio
