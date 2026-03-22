@@ -46,5 +46,7 @@
     file
     wirelesstools
     glib
+    rustup
+    cloc
   ];
 }

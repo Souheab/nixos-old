@@ -12,6 +12,7 @@
     ../modules/home/obs.nix
     ../modules/home/vscode.nix
     ../modules/home/programming
+    ../modules/home/awesomewm.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -58,7 +59,6 @@
     brave
     xournalpp
     tenacity
-    davinci-resolve
     dbeaver-bin
     google-chrome
     android-studio
@@ -68,6 +68,8 @@
     godot
     anki
     postman
+    picom
+    xfce.thunar
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
