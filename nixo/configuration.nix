@@ -30,7 +30,7 @@
   networking.hostName = "nixo";
 
   # Set your time zone.
-  time.timeZone = "Asia/Riyadh";
+  time.timeZone = "America/Toronto";
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
@@ -41,6 +41,17 @@
     extraGroups = [ "networkmanager" "wheel" "docker"];
     initialPassword = "password";
   };
+
+  services.tailscale = {
+    enable = true;
+    # Enable tailscale at startup
+
+    # If you would like to use a preauthorized key
+    #authKeyFile = "/run/secrets/tailscale_key";
+
+  };
+
+  services.mullvad-vpn.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
